@@ -259,7 +259,7 @@ This optimization dramatically improved:
 
 ---
 
-# 🧠 Proposed Inception EdgeNet Pro Architecture
+# 🧠 Proposed Distilled fundus Classifier Architecture
 
 Instead of relying on massive architectures, a highly optimized TinyML-oriented CNN was engineered specifically for retinal pathology extraction.
 
@@ -551,7 +551,7 @@ project/
 ├── app.py
 ├── README.md
 ├── requirements.txt
-│
+
 ```
 
 ---
