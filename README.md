@@ -19,7 +19,7 @@
 # 🚀 Live Demo
 
 > ## 🌐 Hugging Face Deployment
-> https://huggingface.co/spaces/paulaman1/Fundus-EdgeNet-Pro
+>https://huggingface.co/spaces/paulaman1/Distilled_Multiclass_Fundus_Classifier
 
 ---
 
@@ -231,7 +231,7 @@ VGG19
 
 ## Student Model
 ```text
-Custom Inception EdgeNet Pro
+Distilled fundus Classifier
 ```
 
 The teacher transferred soft probabilistic feature representations into the lightweight student model.
@@ -284,7 +284,7 @@ The architecture was designed for:
 | Model | Parameters | File Size |
 |---|---|---|
 | VGG19 Teacher | ~32.8 Million | ~131 MB |
-| Inception EdgeNet Pro | 81,061 | ~0.44 MB |
+| Distilled fundus Classifier | 81,061 | ~0.44 MB |
 | Quantized INT8 TFLite | 81,061 | 118.63 KB |
 
 ---
@@ -471,7 +471,7 @@ This enables deployment on:
 | Model | Accuracy | File Size |
 |---|---|---|
 | VGG19 Teacher | 94.12% | ~131 MB |
-| Inception EdgeNet Pro | 96.08% | 0.44 MB |
+| Distilled fundus Classifier | 96.08% | 0.44 MB |
 | INT8 TFLite Model | 96.08% | 118.63 KB |
 
 ---
@@ -512,35 +512,6 @@ The final production pipeline was deployed publicly using:
 
 ---
 
-# 🛡️ Confidence-Based Safety Layer
-
-Medical AI systems should avoid unsafe forced predictions.
-
-A custom confidence rejection system was implemented.
-
----
-
-# 🚫 Invalid / Unknown Image Rejection
-
-If prediction confidence falls below:
-
-```text
-85%
-```
-
-the image is rejected as:
-
-```text
-Invalid / Unknown Image
-```
-
-This helps reduce unsafe predictions on:
-- Poor-quality fundus images
-- Out-of-distribution images
-- Random objects
-- Non-retinal content
-
----
 
 # 🧠 Inference Pipeline
 
@@ -580,20 +551,7 @@ project/
 ├── app.py
 ├── README.md
 ├── requirements.txt
-├── best_student_model.keras
-├── fundus_inception_edgenet_pro_int8.tflite
 │
-├── training/
-│   ├── teacher_training.ipynb
-│   ├── student_kd_training.ipynb
-│   ├── quantization_pipeline.ipynb
-│   └── evaluation.ipynb
-│
-├── assets/
-│   ├── architecture.png
-│   ├── confusion_matrix.png
-│   ├── predictions.png
-│   └── model_comparison.png
 ```
 
 ---
